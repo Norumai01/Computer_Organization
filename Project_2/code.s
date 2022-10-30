@@ -10,7 +10,7 @@ Main:
    ADD X20, X0, XZR  // int h = Multiply(j,k);
    B End
 
-Multiply:
+Multiply:  // int Multiply(a,b) {};
    ADDI X9, XZR, #0  // int i = 0
    ADDI X19, XZR, #0  //int r = 0
 Loop:   
@@ -20,7 +20,7 @@ Loop:
    ADDI X9, X9, #1  
    B Loop
 Return:   
-   ADD X0, X19, XZR  // Stores X19, into X0 for return.
+   ADD X0, X19, XZR  // Stores X19 into X0 for return.
    LDUR X19, [X28, #0]  // Deallocating stacks
    LDUR X9, [X28, #8]
    ADDI X28, X28, #16
